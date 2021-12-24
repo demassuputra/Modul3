@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormActivity">
+
+    <LinearLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="89dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/merienda_one"
+            android:textColor="@color/teal_500"
+            android:text="@string/formulir_sewa_alat_pancing"
+            android:textAlignment="center"
+            android:textSize="80px"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="25dp">
+
+
+            <TextView
+                android:id="@+id/lbl_namalengkap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/josefin_sans_semibold"
+                android:labelFor="@+id/input_namalengkap"
+                android:text="Nama Lengkap"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/input_namalengkap"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_namalengkap"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/black"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/lbl_tgl_lahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_namalengkap"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/quicksand"
+                android:labelFor="@+id/input_umur"
+                android:text="Tanggal Sewa"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_tgl_sewa"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_tgl_lahir"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/black"
+                android:hint="Masukan Tanggal sewa"
+
+                android:textSize="20sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/grp_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_tgl_sewa"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="25dp">
+
+
+                <TextView
+                    android:id="@+id/lbl_umur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Umur "
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+                <SeekBar
+                    android:id="@+id/seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lbl_umur"
+                    android:layout_marginHorizontal="65dp"
+                    android:layout_marginBottom="15dp"
+                    android:max="100"
+                    android:progress="18"
+                    android:scaleX="2"
+                    android:scaleY="2" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/grp_seekbar"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/quicksand"
+                android:labelFor="@+id/radioGroupGender"
+                android:text="Gender"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_gender"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/laki_laki"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Laki-Laki"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/perempuan"
+                    android:layout_width="273dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Perempuan"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <RelativeLayout
+                android:id="@+id/checkbox_sosmed"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroupGender"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="20dp">
+
+                <!--                Label sumber-->
+                <TextView
+                    android:id="@+id/lbl_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Penyewaan"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <!--                Sumber instagram-->
+                <CheckBox
+                    android:id="@+id/pancing_fullset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lbl_service"
+                    android:checked="false"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Pancing Fullset"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--                Sumber discord-->
+                <CheckBox
+                    android:id="@+id/tas_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pancing_fullset"
+                    android:checked="false"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Tas Pancing"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--                Sumber Youtube-->
+                <CheckBox
+                    android:id="@+id/satu_set_kail_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tas_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/quicksand"
+                    android:text="1 Set Kail Pancing"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--                Sumber youtube-->
+                <CheckBox
+                    android:id="@+id/joran_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/satu_set_kail_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Joran Pancing"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--                Sumber nimotv-->
+                <CheckBox
+                    android:id="@+id/reel_pancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/joran_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Reel Pancing"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--                Sumber lainnya-->
+                <CheckBox
+                    android:id="@+id/lainnya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reel_pancing"
+                    android:checked="false"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Lainnya"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/daftar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkbox_sosmed"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/rounded_button"
+                android:text="Daftar"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
